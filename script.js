@@ -2,11 +2,13 @@ const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
 const question = document.getElementById('question');
 const emoji = document.getElementById('emoji');
+const noBtnContainer = document.getElementById('no-btn-container')
 
 // Event listeners for hover (desktop) and touch (mobile)
-noBtn.addEventListener('mouseover', moveButton);
-noBtn.addEventListener('touchstart', moveButton);
+noBtn.addEventListener('mouseover', scaleDownButton);
+noBtn.addEventListener('touchstart', scaleDownButton);
 
+/*
 function moveButton() {
     // Get viewport dimensions
     const maxX = window.innerWidth - noBtn.offsetWidth;
@@ -20,6 +22,11 @@ function moveButton() {
     noBtn.style.position = 'fixed';
     noBtn.style.left = `${randomX}px`;
     noBtn.style.top = `${randomY}px`;
+}
+*/
+
+function scaleDownButton() {
+    noBtnContainer.style.animation = "scaledown 0.75s 1 forwards";
 }
 
 // Logic for when they finally click "Yes"
